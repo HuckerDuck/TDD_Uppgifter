@@ -1,6 +1,6 @@
 package Se.TestDriven;
 
 public enum cardTypes {
-    A, B,
+    Number, Rank,
 
 }

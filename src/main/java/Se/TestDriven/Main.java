@@ -1,9 +1,6 @@
 package Se.TestDriven;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -23,14 +20,14 @@ public class Main {
         for (int i = 2; i <= 10; i++) {
 
             for(int j = 0; j < 4; j++){
-                cards.add(new Card(String.valueOf(i), suits[j], i, cardTypes.A));
+                cards.add(new Card(String.valueOf(i), suits[j], i, cardTypes.Number));
             }
         }
 
         for (int i = 10; i <= 13; i++) {
 
             for(int j = 0; j < 4; j++){
-                cards.add(new Card(cardPlaceholders[j], suits[j], i, cardTypes.B));
+                cards.add(new Card(cardPlaceholders[j], suits[j], i, cardTypes.Rank));
             }
         }
 
@@ -56,24 +53,31 @@ public class Main {
                     Card card = cards.get(new Random().nextInt(cards.size()));
                     userCards.add(card);
                     cards.remove(card);
-                    System.out.println(card.toString());
-                    System.out.println(cards.size());
+                    System.out.println();
+                    System.out.println("Du fick ett: " + card.toString());
+
+                    System.out.println("Antal kort kvar i kortleken: " + cards.size());
+
+
 
                     break;
 
                 //! Ta bort kort
                 case "2":
                     System.out.println(userCards);
+                    userCards.remove(userCards.size()-1);
                     break;
 
                 //! Shuffle
                 case "3":
-                    System.out.println();
+                    Collections.shuffle(cards);
+                    System.out.println("Shufflar Kortleken");
                     break;
 
                 //! Visa din kort
                 case "4":
                     System.out.println();
+                    System.out.println(userCards);
                     break;
 
                 //! Avsluta

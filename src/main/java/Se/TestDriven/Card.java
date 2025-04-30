@@ -16,13 +16,11 @@ public class Card {
 
     @Override
     public String toString() {
-        return "Card{" +
-                "suit='" + suit + '\'' +
-                ", value=" + value +
-                ", cardType=" + cardType +
-                ", cardName='" + cardName + '\'' +
-                '}';
+        // Exempel: "Ace of Spades"
+        return String.format("%s of %s", cardName, suit);
     }
+
+
 
     public String getCardName() {
         return cardName;
@@ -37,8 +35,9 @@ public class Card {
     }
 
 
-
     public String getSuit() {
         return suit;
     }
 }
+
+
